@@ -1,28 +1,46 @@
 package main 
-
 import (
 	"fmt"
 )
 
-type Item struct{
-	value int
-	num   int
+func add(args ...int){
+	sum := 0
+	for _, item := range args{
+		sum += item
+	}
+
+	fmt.Println("sum:",sum)
 }
 
-func (item Item) cost() {
-	fmt.Printf("the cost of item is %d \n",item.value*item.num)
-}
+// func show(args ...interface{}){
+// 	for _, item := range args{
+// 		switch item.(type) {
+// 		case int:
+// 			fmt.Println("int value:", item)
+// 		case string:
+// 			fmt.Println("string value:", item)
+// 		default:
+// 			fmt.Println("unknow type")
+// 		}
+// 	}
 
-type student struct{
-
-	Item //这里嵌套了一个Item的类型数据，那么student中就会集成Item中的数据和方法
-	name string
-}
+// 	// add(args...)
+// }
 
 func main(){
-	var st = student{Item{12,3}, "xiaoming"} //这里是对student的一个定义，初始化的时要注意Item类型的数据是如何初始化的
+	show := func (args ...interface{}){
+	for _, item := range args{
+		switch item.(type) {
+		case int:
+			fmt.Println("int value:", item)
+		case string:
+			fmt.Println("string value:", item)
+		default:
+			fmt.Println("unknow type")
+		}
+	}
 
-	fmt.Printf("the name is %s  value is %d \n",st.name, st.value)
-	st.cost()
-
+	// add(args...)
+}
+	show(1,2,"hello",4,5)
 }
