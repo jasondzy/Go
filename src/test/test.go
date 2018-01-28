@@ -3,44 +3,28 @@ import (
 	"fmt"
 )
 
-func add(args ...int){
-	sum := 0
-	for _, item := range args{
-		sum += item
-	}
+type  interger int
 
-	fmt.Println("sum:",sum)
+func (i interger) show() {
+	fmt.Println("i:",i)
 }
 
-// func show(args ...interface{}){
-// 	for _, item := range args{
-// 		switch item.(type) {
-// 		case int:
-// 			fmt.Println("int value:", item)
-// 		case string:
-// 			fmt.Println("string value:", item)
-// 		default:
-// 			fmt.Println("unknow type")
-// 		}
-// 	}
-
-// 	// add(args...)
-// }
+func (i *interger) add(j interger) {
+	*i += j
+	fmt.Println("i:",*i)
+}
+  
+type inter interface { 
+	show()
+	add(j interger) 
+}
 
 func main(){
-	show := func (args ...interface{}){
-	for _, item := range args{
-		switch item.(type) {
-		case int:
-			fmt.Println("int value:", item)
-		case string:
-			fmt.Println("string value:", item)
-		default:
-			fmt.Println("unknow type")
-		}
-	}
+	var a interger
 
-	// add(args...)
-}
-	show(1,2,"hello",4,5)
+	var ii inter = &a 
+
+	ii.add(3)
+
+	ii.show()
 }
