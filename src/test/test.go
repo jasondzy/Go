@@ -1,30 +1,31 @@
 package main 
-import (
+import(
 	"fmt"
+	"net/http"
 )
 
-type  interger int
-
-func (i interger) show() {
-	fmt.Println("i:",i)
-}
-
-func (i *interger) add(j interger) {
-	*i += j
-	fmt.Println("i:",*i)
-}
-  
-type inter interface { 
-	show()
-	add(j interger) 
-}
-
 func main(){
-	var a interger
 
-	var ii inter = &a 
+	mux := http.NewServeMux()
 
-	ii.add(3)
+	mux.HandleFunc("/", index)
+	mux.HandleFunc("/test/", test)
 
-	ii.show()
+	server := &http.Server{
+		Addr: "0.0.0.0:8080",
+		Handler: mux,
+	}
+
+	server.ListenAndServe()
+}
+
+func index(w http.ResponseWriter, request *http.Request){
+	fmt.Fprintf(w,"hello world")
+}
+
+func test(w http.ResponseWriter, request *http.Request){
+	w.Header().Set("Location","https://www.baidu.com")
+	w.WriteHeader(302) 
+	// h := request.Header
+	// fmt.Fprintln(w, h)
 }
