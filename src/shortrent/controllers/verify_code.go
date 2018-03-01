@@ -2,7 +2,7 @@ package controllers
 
 import (
 	crand "crypto/rand"
-	// "fmt"
+ 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/session"
 	"image"
@@ -13,6 +13,8 @@ import (
 	"net/http"
 	"strconv"
 	"time"
+	"encoding/json"
+	"shortrent/models"
 )
 
 var globalSessions *session.Manager
@@ -46,13 +48,30 @@ func (this *YzmController) GetYzm() {
  * ajax判断验证码
  */
 func (this *YzmController) JudgeYzm() {
-	p := this.GetString("param")
-	rs := "对不起,输入" + p + "为错误!"
+	// fmt.Println("test for post 1111")
+	var ob models.Param_smscode //这里为解析json数据定义了一个结构体，详见goweb编程中关于json的解析
+    json.Unmarshal(this.Ctx.Input.RequestBody, &ob) //调用enconding/json中的函数进行解析，this.Ctx.Input.RequestBody是beego中的输入body部分，详见beego文档的请求输入数据部分
+    // fmt.Println(ob.Piccode)
+
+	p := ob.Piccode //这里解析后获得的ob是一个Param_smscode类型的结构
+	rs := "对不起,输入的验证码：" + p + "为错误!"
 	sess, _ := globalSessions.SessionStart(this.Ctx.ResponseWriter, this.Ctx.Request)
 	if sess.Get("yzm") == p {
+		fmt.Println(" verity correct ")
 		rs = "y" //返回y表示正确
 	}
-	this.Ctx.WriteString(rs)
+
+	if rs == "y"{
+		this.Data["json"] = map[string]interface{}{"errcode": "1", "errmsg": "由于此框架的短信验证码部分尚未实现，这里的短信验证码可写入任意的值"}
+		// this.Ctx.WriteString(rs)
+		this.ServeJSON() //这个函数的作用是将上边的data按照json的方式进行传递，详见beego文档的多种格式输出部分
+	} else {
+		this.Data["json"] = map[string]interface{}{"errcode": "1", "errmsg": rs}
+		// this.Ctx.WriteString(rs)
+		this.ServeJSON()
+	}
+
+
 }
 
 const (
