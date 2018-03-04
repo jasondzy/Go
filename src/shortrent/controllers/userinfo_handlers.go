@@ -52,21 +52,6 @@ func (c *UserinfoHandler) Post() {
 	o.Using("userinfo")
 
 	// 这里用来判断注册的手机号是否已经注册过 start
-	// userinfo_tmp := models.Ih_user_profile{Up_mobile:userinfo.Mobile}
-	// err := o.Read(&userinfo_tmp, "Up_mobile")
-	// if err == orm.ErrNoRows {
-    // 	fmt.Println("查询不到")
-	// } else if err == orm.ErrMissPK {
-   	// 	fmt.Println("找不到主键")
-	// } else if userinfo_tmp.Id == 0{
-	// 	fmt.Println("手机号不存在")
-	// } else {
-	// 	fmt.Println(userinfo_tmp.Id, userinfo_tmp.Up_mobile)
-	// 	c.Data["json"] = map[string]interface{}{"errcode": "1", "errmsg": "mobile number existed"}
-	// 	// this.Ctx.WriteString(rs)
-	// 	c.ServeJSON() //这个函数的作用是将上边的data按照json的方式进行传递，详见beego文档的多种格式输出部分
-	// 	return
-	// }
 
 	var maps []orm.Params
 	num, err := o.Raw("SELECT * FROM ih_user_profile WHERE up_mobile = ?", userinfo.Mobile).Values(&maps)
@@ -78,6 +63,24 @@ func (c *UserinfoHandler) Post() {
 		c.ServeJSON() //这个函数的作用是将上边的data按照json的方式进行传递，详见beego文档的多种格式输出部分
 		return 
 	}
+
+	// 如下是设置 系统的session
+	//该处的session的初始化代码在verify_code.go文件中的init函数
+	sess, _ := globalSessions.SessionStart(c.Ctx.ResponseWriter, c.Ctx.Request)
+	defer sess.SessionRelease(c.Ctx.ResponseWriter)
+
+	session_data := sess.Get("username")
+	if session_data != nil {
+		fmt.Println("username has existed , now, set it again ")
+		sess.Delete("username")
+		sess.Set("username", userinfo.Mobile)
+	} else {
+		fmt.Println("set username session")
+		sess.Set("username", userinfo.Mobile)
+	}
+	// 设置 session end
+
+
 	// 判断手机号是否注册 end
 
 	userinfo_data := new(models.Ih_user_profile)

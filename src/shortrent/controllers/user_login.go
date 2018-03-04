@@ -39,6 +39,22 @@ func (c *LoginHandler) Post() {
 		c.Data["json"] = map[string]interface{}{"errcode": "1", "errmsg": "mobile does not exist"}
 	}
 
+	// 如下是设置 系统的session
+	//该处的session的初始化代码在verify_code.go文件中的init函数
+	sess, _ := globalSessions.SessionStart(c.Ctx.ResponseWriter, c.Ctx.Request)
+	defer sess.SessionRelease(c.Ctx.ResponseWriter)
+
+	session_data := sess.Get("username")
+	if session_data != nil {
+		fmt.Println("username has existed , now, set it again ")
+		sess.Delete("username")
+		sess.Set("username", maps[0]["up_name"])
+	} else {
+		fmt.Println("set username session")
+		sess.Set("username", maps[0]["up_name"])
+	}
+	// 设置 session end
+
 	// this.Ctx.WriteString(rs)
 	c.ServeJSON() //这个函数的作用是将上边的data按照json的方式进行传递，详见beego文档的多种格式输出部分
 

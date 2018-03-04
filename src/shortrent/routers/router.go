@@ -15,5 +15,9 @@ func init() {
     beego.Router("/api/register/", &controllers.UserinfoHandler{})
     //这里定义一个处理用户登录的功能
     beego.Router("/api/login/", &controllers.LoginHandler{})
+    //主页上用来处理检查用户是否登录的功能
+    beego.Router("/api/check_login/", &controllers.IndexHandler{})
+    //处理的是首页的房屋信息显示
+    beego.Router("/api/house/index/", &controllers.HouseinfoHandler{})
 }
 
