@@ -11,3 +11,8 @@ type Register_data struct {
 	Password string `json:"password"`
 	Password2 string `json:"password2"`
 }
+
+type Login_data struct {
+	Mobile string `json:"mobile"`
+	Password string `json:"password"`
+}
