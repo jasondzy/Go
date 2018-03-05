@@ -19,5 +19,11 @@ func init() {
     beego.Router("/api/check_login/", &controllers.IndexHandler{})
     //处理的是首页的房屋信息显示
     beego.Router("/api/house/index/", &controllers.HouseinfoHandler{})
+    //处理用户登出操作
+    beego.Router("/api/logout/", &controllers.LogoutHandler{})
+    //处理用户的详细信息显示
+    beego.Router("/api/profile/", &controllers.MyinfoHandler{})
+    //处理用户真实信息提交
+    beego.Router("/api/profile/auth", &controllers.RealnameHandler{})
 }
 

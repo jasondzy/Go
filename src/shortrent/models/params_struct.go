@@ -16,3 +16,8 @@ type Login_data struct {
 	Mobile string `json:"mobile"`
 	Password string `json:"password"`
 }
+
+type Real_name struct {
+	Real_name string `json:"real_name"`
+	Id_card string `json:"id_card"`
+}
