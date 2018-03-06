@@ -24,6 +24,11 @@ func init() {
     //处理用户的详细信息显示
     beego.Router("/api/profile/", &controllers.MyinfoHandler{})
     //处理用户真实信息提交
-    beego.Router("/api/profile/auth", &controllers.RealnameHandler{})
+    beego.Router("/api/profile/auth/", &controllers.RealnameHandler{})
+    //处理用户头像上传
+    beego.Router("/api/profile/avatar/", &controllers.PersonimgUpload{})
+    //处理用户修改用户名
+    beego.Router("/api/profile/name/", &controllers.PersonnameModify{})
+
 }
 

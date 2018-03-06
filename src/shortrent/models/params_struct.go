@@ -21,3 +21,7 @@ type Real_name struct {
 	Real_name string `json:"real_name"`
 	Id_card string `json:"id_card"`
 }
+
+type Name_modify struct {
+	Name string `json:"name"`
+}

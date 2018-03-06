@@ -14,7 +14,7 @@ function getCookie(name) {
 $(document).ready(function () {
     $.get("/api/profile", function(data){
         if ("4101" == data.errcode) {
-            location.href = "/login.html";
+            location.href = "/template/login.html";
         }
         else if ("0" == data.errcode) {
             $("#user-name").val(data.data.name);
@@ -39,7 +39,7 @@ $(document).ready(function () {
                     $('.image_uploading').fadeOut('fast');
                     $("#user-avatar").attr("src", data.data)
                 } else if ("4101" == data.errcode) {
-                    location.href = "/login.html";
+                    location.href = "/template/login.html";
                 }
             }
         };
@@ -66,7 +66,7 @@ $(document).ready(function () {
                 } else if ("4001" == data.errcode) {
                     $(".error-msg").show();
                 } else if ("4101" == data.errcode) { // 4101代表用户未登录，强制跳转到登录页面
-                    location.href = "/login.html";
+                    location.href = "/template/login.html";
                 }
             }
         });
