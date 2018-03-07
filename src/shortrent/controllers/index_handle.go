@@ -15,6 +15,10 @@ type HouseinfoHandler struct {
 	beego.Controller
 }
 
+type ShowDetail struct {
+	beego.Controller
+}
+
 func (c *IndexHandler) Get() {
 
 	// 如下是设置 系统的session
@@ -79,3 +83,14 @@ func (c *HouseinfoHandler) Get() {
 	c.Data["json"] = map[string]interface{}{"errcode": "0", "errmsg": "ok", "houses":houses, "areas":area}
 	c.ServeJSON() //这个函数的作用是将上边的data按照json的方式进行传递，详见beego文档的多种格式输出部分
 }
+
+//**************************************显示房间的详细信息***********************************************
+func (c *ShowDetail) Get() {
+	//获取URL中的参数
+	var house_id string
+	c.Ctx.Input.Bind(&house_id, "house_id")  //role变量保存传入的参数,从而获得url地址中传入的参数
+	fmt.Println("house_id:",house_id)
+
+}
+
+//******************************************end********************************************************

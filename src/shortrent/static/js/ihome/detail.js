@@ -31,7 +31,7 @@ $(document).ready(function(){
             }
         }
         else if ("4101" == data.errcode) {
-                location.href = "/login.html";
+                location.href = "/template/login.html";
                     return;
         }
     }, "json")

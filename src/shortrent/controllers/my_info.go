@@ -29,7 +29,11 @@ type PersonnameModify struct {
 	beego.Controller
 }
 
+type ShowOrder struct {
+	beego.Controller
+}
 
+//***************************************用户信息显示**********************************************
 func (c *MyinfoHandler) Get() {
 	// 如下是设置 系统的session
 	//该处的session的初始化代码在verify_code.go文件中的init函数
@@ -71,6 +75,7 @@ func (c *MyinfoHandler) Get() {
 	c.ServeJSON() //这个函数的作用是将上边的data按照json的方式进行传递，详见beego文档的多种格式输出部分
 
 }
+//*****************************end**************************************************************
 
 //***********************修改用户头像信息********************************************************
 func (c *PersonimgUpload) Post() {
@@ -108,7 +113,7 @@ func (c *PersonimgUpload) Post() {
 				num, _ := res.RowsAffected()
 				fmt.Println("mysql row affected nums: ", num)
 				c.Data["json"] = map[string]interface{}{"errcode": "0", "data": file_path}
-				fmt.Println(file_path)
+				// fmt.Println(file_path)
 			} else {
 				fmt.Println("查询不到")
 				c.Data["json"] = map[string]interface{}{"errcode": "4101", "errmsg": "update database wrong "}
@@ -180,6 +185,138 @@ func (c *PersonnameModify) Post() {
 }
 //**********************************end*************************************************************
 
+//************************************订单显示******************************************************
+func (c *ShowOrder) Get() {
+	//获取URL中的参数
+	var role string
+	c.Ctx.Input.Bind(&role, "role")  //role变量保存传入的参数,从而获得url地址中传入的参数
+	fmt.Println("role:",role)
+
+	// 如下是设置 系统的session
+	//该处的session的初始化代码在verify_code.go文件中的init函数
+	sess, _ := globalSessions.SessionStart(c.Ctx.ResponseWriter, c.Ctx.Request)
+	defer sess.SessionRelease(c.Ctx.ResponseWriter)
+
+	session_data := sess.Get("username")
+	if session_data != nil {
+		fmt.Println("username has existed ")
+
+		o := orm.NewOrm()
+		o.Using("userinfo")
+
+		var maps []orm.Params
+		var maps_info []orm.Params
+		var orders = make([]map[string]interface{}, 0)
+		var order = make(map[string]interface{})
+
+		num, err := o.Raw("select up_user_id from ih_user_profile where up_name=?", session_data).Values(&maps)
+		if err == nil && num > 0 {
+			fmt.Println(maps) // slene
+			if role == "custom"{
+				fmt.Println(" role as custom")
+				fmt.Println("====", maps[0]["up_user_id"].(string))
+				num2, err2 := o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where hi_user_id=? order by oi_ctime desc", maps[0]["up_user_id"].(string)).Values(&maps_info)
+				if err2 == nil && num2 > 0 {
+					fmt.Println("maps_info:",maps_info)
+
+					for _, value := range maps_info {
+						order["order_id"] = value["oi_order_id"].(string)
+						order["title"] = value["hi_title"].(string)
+						order["img_url"] = value["hi_index_image_url"].(string)
+						order["start_date"] = value["oi_begin_date"].(string)
+						order["end_date"] = value["oi_end_date"].(string)
+						order["ctime"] = value["oi_ctime"].(string)
+						order["days"] = value["oi_days"].(string)
+						order["amount"] = value["oi_amount"].(string)
+						order["status"] = value["oi_status"].(string)
+						order["comment"] = value["oi_comment"].(string)
+
+						orders = append(orders, order)
+					}
+					fmt.Println("orders:==",orders)
+					
+
+				} else {
+					fmt.Println(" do not query the data ")
+					_, _ = o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where hi_user_id=? order by oi_ctime desc", 10000).Values(&maps_info)
+					for _, value := range maps_info {
+						order["order_id"] = "此为示例订单，在你下单后显示自己订单"
+						order["title"] = value["hi_title"].(string)
+						order["img_url"] = value["hi_index_image_url"].(string)
+						order["start_date"] = value["oi_begin_date"].(string)
+						order["end_date"] = value["oi_end_date"].(string)
+						order["ctime"] = value["oi_ctime"].(string)
+						order["days"] = value["oi_days"].(string)
+						order["amount"] = value["oi_amount"].(string)
+						order["status"] = value["oi_status"].(string)
+						order["comment"] = value["oi_comment"].(string)
+
+						orders = append(orders, order)
+					}
+					fmt.Println("orders==", orders)
+					
+				}
+
+				
+
+			} else {
+				fmt.Println(" role as owner")
+				num2, err2 := o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where oi_user_id=? order by oi_ctime desc", maps[0]["up_user_id"].(int)).Values(&maps_info)
+				if err2 == nil && num2 > 0 {
+					fmt.Println("maps_info:",maps_info)
+					for _, value := range maps_info {
+						order["order_id"] = value["oi_order_id"].(string)
+						order["title"] = value["hi_title"].(string)
+						order["img_url"] = value["hi_index_image_url"].(string)
+						order["start_date"] = value["oi_begin_date"].(string)
+						order["end_date"] = value["oi_end_date"].(string)
+						order["ctime"] = value["oi_ctime"].(string)
+						order["days"] = value["oi_days"].(string)
+						order["amount"] = value["oi_amount"].(string)
+						order["status"] = value["oi_status"].(string)
+						order["comment"] = value["oi_comment"].(string)
+
+						orders = append(orders, order)
+					}
+
+
+				} else {
+					fmt.Println(" do not query the data ")
+					_, _ = o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where hi_user_id=? order by oi_ctime desc", 10000).Values(&maps_info)
+					for _, value := range maps_info {
+						order["order_id"] = "此为示例订单，在你下单后显示自己订单"
+						order["title"] = value["hi_title"].(string)
+						order["img_url"] = value["hi_index_image_url"].(string)
+						order["start_date"] = value["oi_begin_date"].(string)
+						order["end_date"] = value["oi_end_date"].(string)
+						order["ctime"] = value["oi_ctime"].(string)
+						order["days"] = value["oi_days"].(string)
+						order["amount"] = value["oi_amount"].(string)
+						order["status"] = value["oi_status"].(string)
+						order["comment"] = value["oi_comment"].(string)
+
+						orders = append(orders, order)
+					}
+				}
+			}
+
+			c.Data["json"] = map[string]interface{}{"errcode": "0", "errmsg": "ok", "orders":orders}
+
+		} else {
+			fmt.Println("查询不到")
+			c.Data["json"] = map[string]interface{}{"errcode": "4101", "errmsg": "can not query data from database "}
+		}
+		
+
+
+	} else {
+		fmt.Println("username session does not exist")
+		c.Data["json"] = map[string]interface{}{"errcode": "4101", "errmsg": "not login "}
+	}
+	// 设置 session end
+	c.ServeJSON() //这个函数的作用是将上边的data按照json的方式进行传递，详见beego文档的多种格式输出部分
+}
+//***********************************end***********************************************************
 
 func (c *RealnameHandler) Get() {
 	// 如下是设置 系统的session

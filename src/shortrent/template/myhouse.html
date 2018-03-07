@@ -17,7 +17,7 @@
         <div class="top-bar">
             <div class="nav-bar">
                 <h3 class="page-title">我的房源</h3>
-                <a class="nav-btn fl" href="/my.html"><span><i class="fa fa-angle-left fa-2x"></i></span></a>
+                <a class="nav-btn fl" href="/template/my.html"><span><i class="fa fa-angle-left fa-2x"></i></span></a>
             </div>
         </div>
         <div class="houses-con">
@@ -27,7 +27,7 @@
                         <h3>尚未进行实名认证，无法发布房屋信息！</h3>
                     </div>
                     <div class="house-content">
-                        <a href="/auth.html" class="btn btn-success">去实名认证</a>
+                        <a href="/template/auth.html" class="btn btn-success">去实名认证</a>
                     </div>
                 </li>
             </ul>
@@ -36,12 +36,12 @@
             <script id="houses-list-tmpl" type="text/html">
                 <li>
                     <div class="new-house">
-                        <a href="/newhouse.html">发布新房源</a>
+                        <a href="/template/newhouse.html">发布新房源</a>
                     </div>
                 </li>
                 {{each houses as house}}
                 <li>
-                    <a href="/detail.html?id={{house.house_id}}&f=my">
+                    <a href="/template/detail.html?id={{house.house_id}}&f=my">
                         <div class="house-title">
                             <h3>房屋ID:{{house.house_id}} —— {{house.title}}</h3>
                         </div>

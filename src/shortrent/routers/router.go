@@ -19,6 +19,8 @@ func init() {
     beego.Router("/api/check_login/", &controllers.IndexHandler{})
     //处理的是首页的房屋信息显示
     beego.Router("/api/house/index/", &controllers.HouseinfoHandler{})
+    //处理首页房屋显示的详细信息
+    beego.Router("/api/house/info", &controllers.ShowDetail{})
     //处理用户登出操作
     beego.Router("/api/logout/", &controllers.LogoutHandler{})
     //处理用户的详细信息显示
@@ -29,6 +31,8 @@ func init() {
     beego.Router("/api/profile/avatar/", &controllers.PersonimgUpload{})
     //处理用户修改用户名
     beego.Router("/api/profile/name/", &controllers.PersonnameModify{})
+    //订单显示
+    beego.Router("/api/order/my", &controllers.ShowOrder{})
 
 }
 
