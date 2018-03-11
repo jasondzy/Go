@@ -578,3 +578,44 @@ maps_info: [map[oi_days:3 oi_order_id:8 hi_title:地铁2号线，，老上海花
 [0m
 2018/03/11 21:28:04.256 [1;44m[D] [server.go:2619] 60.191.38.77 - - [11/Mar/2018 09:28:04] "GET / HTTP/1.0 302 0" 0.000043  Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:47.0) Gecko/20100101 Firefox/47.0
 [0m
+2018/03/11 22:26:49.411 [1;34m[I] [asm_amd64.s:2337] http server Running on http://:8080[0m
+2018/03/11 22:26:53.716 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:26:53] "GET /template/login.html HTTP/1.0 304 0" 0.000114 http://115.159.62.43/template/my.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+{33333333 12345678}
+[map[up_real_name: up_admin:0 up_utime:2018-03-11 22:07:37 up_ctime:2018-03-11 20:56:21 up_name:user33 up_mobile:33333333 up_id_card: up_avatar:/static/images/personal_images/33333333 up_user_id:10039 up_passwd:12345678]]
+12345678
+set username session
+2018/03/11 22:27:02.115 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:02] "POST /api/login HTTP/1.0 200 0" 0.000999 http://115.159.62.43/template/login.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+2018/03/11 22:27:02.280 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:02] "GET / HTTP/1.0 302 0" 0.000082 http://115.159.62.43/template/login.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+username exist 
+2018/03/11 22:27:02.548 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:02] "GET /api/check_login HTTP/1.0 200 0" 0.000121 http://115.159.62.43/template/index.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+查询到数据
+查询到数据
+2018/03/11 22:27:02.566 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:02] "GET /api/house/index HTTP/1.0 200 0" 0.001047 http://115.159.62.43/template/index.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+username has existed 
+2018/03/11 22:27:06.139 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:06] "GET /api/profile HTTP/1.0 200 0" 0.000712 http://115.159.62.43/template/my.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+2018/03/11 22:27:08.527 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:08] "GET /template/profile.html HTTP/1.0 304 0" 0.000114 http://115.159.62.43/template/my.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+username has existed 
+2018/03/11 22:27:08.743 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:08] "GET /api/profile HTTP/1.0 200 0" 0.000689 http://115.159.62.43/template/profile.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+username has existed  
+file+_path /static/images/personal_images/33333333
+mysql row affected nums:  0
+2018/03/11 22:27:15.247 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:15] "POST /api/profile/avatar HTTP/1.0 200 0" 0.001708 http://115.159.62.43/template/profile.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+2018/03/11 22:27:21.798 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:21] "GET /template/profile.html HTTP/1.0 304 0" 0.000049 http://115.159.62.43/template/my.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+username has existed 
+2018/03/11 22:27:22.120 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:22] "GET /api/profile HTTP/1.0 200 0" 0.000588 http://115.159.62.43/template/profile.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+2018/03/11 22:27:24.275 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:24] "GET /template/profile.html HTTP/1.0 304 0" 0.000050 http://115.159.62.43/template/my.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
+username has existed 
+2018/03/11 22:27:24.492 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 10:27:24] "GET /api/profile HTTP/1.0 200 0" 0.000585 http://115.159.62.43/template/profile.html Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; Redmi Y1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/9.5.2
+[0m
