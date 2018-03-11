@@ -56,7 +56,6 @@ func (c *UserinfoHandler) Post() {
 	var maps []orm.Params
 	num, err := o.Raw("SELECT * FROM ih_user_profile WHERE up_mobile = ?", userinfo.Mobile).Values(&maps)
 	if err == nil && num > 0 {
-		fmt.Println(maps) // slene
 
 		c.Data["json"] = map[string]interface{}{"errcode": "1", "errmsg": "mobile number existed"}
 		// this.Ctx.WriteString(rs)

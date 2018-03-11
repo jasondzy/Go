@@ -1,0 +1,202 @@
+2018/03/11 18:59:29.351 [1;34m[I] [asm_amd64.s:2337] http server Running on http://:8080[0m
+2018/03/11 18:59:53.854 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 06:59:53] "GET /template/index.html HTTP/1.0 200 0" 0.000180 http://115.159.62.43/template/login.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+user not login 
+2018/03/11 18:59:57.711 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 06:59:57] "GET /api/check_login HTTP/1.0 200 0" 0.000162 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+查询到数据
+查询到数据
+2018/03/11 18:59:57.712 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 06:59:57] "GET /api/house/index HTTP/1.0 200 0" 0.001046 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 19:37:42.506 [1;44m[D] [server.go:2619] 101.226.68.215 - - [11/Mar/2018 07:37:42] "GET /api/order HTTP/1.1 405 0" 0.000039  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+2018/03/11 19:51:27.052 [1;44m[D] [server.go:2619] 107.170.228.177 - - [11/Mar/2018 07:51:27] "GET / HTTP/1.0 302 0" 0.000044  Mozilla/5.0 zgrab/0.x
+[0m
+2018/03/11 20:06:23.470 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:06:23] "GET /template/login.html HTTP/1.0 200 0" 0.000122 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 20:06:29.935 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:06:29] "GET /template/register.html HTTP/1.0 200 0" 0.000841 http://115.159.62.43/template/login.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 20:06:32.918 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:06:32] "GET /api/piccode?pre=&cur=66a013c1-1079-482f-b956-950e52435f94 HTTP/1.0 200 0" 0.001625 http://115.159.62.43/template/register.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 20:39:40.587 [1;44m[D] [server.go:2619] 112.90.82.236 - - [11/Mar/2018 08:39:40] "GET / HTTP/1.0 302 0" 0.000044  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+2018/03/11 20:39:40.593 [1;44m[D] [server.go:2619] 112.90.82.218 - - [11/Mar/2018 08:39:40] "GET /template/login.html HTTP/1.0 200 0" 0.000073  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+2018/03/11 20:39:40.656 [1;44m[D] [server.go:2619] 112.90.82.236 - - [11/Mar/2018 08:39:40] "GET /template/index.html HTTP/1.0 200 0" 0.000170 http://115.159.62.43/ Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+username session does not exist
+2018/03/11 20:46:15.434 [1;44m[D] [server.go:2619] 183.57.53.222 - - [11/Mar/2018 08:46:15] "GET /api/profile HTTP/1.0 200 0" 0.000117  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+查询到数据
+查询到数据
+2018/03/11 20:51:51.639 [1;44m[D] [server.go:2619] 101.226.64.174 - - [11/Mar/2018 08:51:51] "GET /api/house/index HTTP/1.0 200 0" 0.000912  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+username session does not exist
+2018/03/11 20:53:07.136 [1;44m[D] [server.go:2619] 101.226.68.215 - - [11/Mar/2018 08:53:07] "GET /api/logout HTTP/1.0 200 0" 0.000162  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+2018/03/11 20:55:07.641 [1;44m[D] [server.go:2619] 183.57.53.196 - - [11/Mar/2018 08:55:07] "GET /template/detail.html?id%3D7 HTTP/1.1 200 0" 0.000182  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+2018/03/11 20:55:16.463 [1;44m[D] [server.go:2619] 119.147.207.152 - - [11/Mar/2018 08:55:16] "GET /template/my.html HTTP/1.0 200 0" 0.000123  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+house_id: 
+username session does not exist
+2018/03/11 20:55:16.474 [1;44m[D] [server.go:2619] 183.57.53.197 - - [11/Mar/2018 08:55:16] "GET /api/house/info?house_id%3D7 HTTP/1.1 200 0" 0.000127  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+2018/03/11 20:55:46.798 [1;44m[D] [server.go:2619] 112.90.82.196 - - [11/Mar/2018 08:55:46] "GET /api/login HTTP/1.0 405 0" 0.000049  Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_4 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G35 QQ/6.5.3.410 V1_IPH_SQ_6.5.3_1_APP_A Pixel/750 Core/UIWebView NetType/2G Mem/117
+[0m
+2018/03/11 20:55:59.235 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:55:59] "POST /api/smscode HTTP/1.0 200 0" 0.000179 http://115.159.62.43/template/register.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+ verity correct 
+2018/03/11 20:56:07.797 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:56:07] "POST /api/smscode HTTP/1.0 200 0" 0.000169 http://115.159.62.43/template/register.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+{33333333 12345678 12345678}
+set username session
+10039 <nil>
+2018/03/11 20:56:21.697 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:56:21] "POST /api/register HTTP/1.0 200 0" 0.002381 http://115.159.62.43/template/register.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 20:56:21.723 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:56:21] "GET / HTTP/1.0 302 0" 0.000055 http://115.159.62.43/template/register.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username exist 
+2018/03/11 20:56:22.000 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:56:22] "GET /api/check_login HTTP/1.0 200 0" 0.000121 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+查询到数据
+查询到数据
+2018/03/11 20:56:22.002 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:56:22] "GET /api/house/index HTTP/1.0 200 0" 0.000732 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+house_id: 7
+username has existed 
+maps= [map[hi_capacity:3 up_avatar:/static/images/landlord01.jpg hi_user_id:10003 hi_acreage:90 hi_deposit:100 hi_min_days:1 hi_max_days:30 hi_room_count:3 hi_beds:3 up_name:zhaogong hi_address:上海市浦东新区龙阳路 hi_price:19800 hi_house_unit:三室一厅一卫 hi_title:地铁2号线，，老上海花园洋房]]
+=======
+=======
+=======
+=======
+=======
+=======
+=======
+=======
+=======
+=======
+=======
+=======
+=======
+facilities= [1 2 3 5 7 8 11 13 15 17 19 21 23]
+2018/03/11 20:56:26.840 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:56:26] "GET /api/house/info?house_id=7 HTTP/1.0 200 0" 0.002075 http://115.159.62.43/template/detail.html?id=7 Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username has existed 
+2018/03/11 20:56:30.584 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:56:30] "GET /api/profile HTTP/1.0 200 0" 0.000607 http://115.159.62.43/template/my.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+role: custom
+username has existed 
+[map[up_user_id:10039]]
+ role as custom
+==== 10039
+err2=,num2= <nil> 3
+maps_info: [map[hi_index_image_url:/static/images/home03.jpg oi_ctime:2018-03-11 18:15:53 oi_amount:59400 oi_comment:<nil> oi_days:3 oi_status:0 oi_order_id:6 hi_title:地铁2号线，，老上海花园洋房 oi_begin_date:2018-03-16 oi_end_date:2018-03-16] map[oi_amount:89400 oi_status:0 oi_order_id:5 hi_title:宽窄巷子+160平大空间+文化保护区双地铁 hi_index_image_url:/static/images/home02.jpg oi_begin_date:2018-03-15 oi_end_date:2018-03-16 oi_days:3 oi_comment:<nil> oi_ctime:2018-03-11 18:04:00] map[oi_amount:119400 oi_comment:<nil> oi_order_id:4 hi_index_image_url:/static/images/home01.jpg oi_end_date:2018-03-16 oi_ctime:2018-03-11 17:43:16 oi_days:3 oi_status:0 hi_title:12号线龙漕路零距离 oi_begin_date:2018-03-15]]
+orders:== [map[img_url:/static/images/home03.jpg start_date:2018-03-16 end_date:2018-03-16 status:0 order_id:6 title:地铁2号线，，老上海花园洋房 ctime:2018-03-11 18:15:53 days:3 amount:59400 comment:] map[amount:89400 comment: order_id:5 title:宽窄巷子+160平大空间+文化保护区双地铁 ctime:2018-03-11 18:04:00 days:3 img_url:/static/images/home02.jpg start_date:2018-03-15 end_date:2018-03-16 status:0] map[title:12号线龙漕路零距离 amount:119400 status:0 comment: order_id:4 img_url:/static/images/home01.jpg start_date:2018-03-15 end_date:2018-03-16 ctime:2018-03-11 17:43:16 days:3]]
+2018/03/11 20:56:32.190 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:56:32] "GET /api/order/my?role=custom HTTP/1.0 200 0" 0.003374 http://115.159.62.43/template/orders.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+role: custom
+username has existed 
+[map[up_user_id:10039]]
+ role as custom
+==== 10039
+err2=,num2= <nil> 3
+maps_info: [map[oi_days:3 oi_status:0 hi_index_image_url:/static/images/home03.jpg oi_begin_date:2018-03-16 oi_end_date:2018-03-16 oi_ctime:2018-03-11 18:15:53 oi_amount:59400 oi_comment:<nil> oi_order_id:6 hi_title:地铁2号线，，老上海花园洋房] map[oi_days:3 oi_status:0 hi_title:宽窄巷子+160平大空间+文化保护区双地铁 oi_begin_date:2018-03-15 oi_end_date:2018-03-16 oi_ctime:2018-03-11 18:04:00 oi_order_id:5 hi_index_image_url:/static/images/home02.jpg oi_amount:89400 oi_comment:<nil>] map[hi_title:12号线龙漕路零距离 hi_index_image_url:/static/images/home01.jpg oi_comment:<nil> oi_order_id:4 oi_begin_date:2018-03-15 oi_end_date:2018-03-16 oi_ctime:2018-03-11 17:43:16 oi_days:3 oi_amount:119400 oi_status:0]]
+orders:== [map[order_id:6 img_url:/static/images/home03.jpg start_date:2018-03-16 end_date:2018-03-16 ctime:2018-03-11 18:15:53 amount:59400 status:0 title:地铁2号线，，老上海花园洋房 days:3 comment:] map[title:宽窄巷子+160平大空间+文化保护区双地铁 end_date:2018-03-16 days:3 amount:89400 status:0 comment: order_id:5 img_url:/static/images/home02.jpg start_date:2018-03-15 ctime:2018-03-11 18:04:00] map[order_id:4 start_date:2018-03-15 days:3 amount:119400 title:12号线龙漕路零距离 img_url:/static/images/home01.jpg end_date:2018-03-16 ctime:2018-03-11 17:43:16 status:0 comment:]]
+2018/03/11 20:56:49.521 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 08:56:49] "GET /api/order/my?role=custom HTTP/1.0 200 0" 0.002173 http://115.159.62.43/template/orders.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 21:03:10.235 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:10] "GET /template/orders.html HTTP/1.0 304 0" 0.000145 http://115.159.62.43/template/my.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+role: custom
+username has existed 
+[map[up_user_id:10039]]
+ role as custom
+==== 10039
+err2=,num2= <nil> 3
+maps_info: [map[oi_order_id:6 oi_ctime:2018-03-11 18:15:53 oi_status:0 oi_comment:<nil> hi_title:地铁2号线，，老上海花园洋房 hi_index_image_url:/static/images/home03.jpg oi_begin_date:2018-03-16 oi_end_date:2018-03-16 oi_days:3 oi_amount:59400] map[oi_ctime:2018-03-11 18:04:00 oi_days:3 oi_amount:89400 oi_status:0 oi_comment:<nil> oi_order_id:5 oi_begin_date:2018-03-15 oi_end_date:2018-03-16 hi_title:宽窄巷子+160平大空间+文化保护区双地铁 hi_index_image_url:/static/images/home02.jpg] map[hi_title:12号线龙漕路零距离 hi_index_image_url:/static/images/home01.jpg oi_ctime:2018-03-11 17:43:16 oi_days:3 oi_status:0 oi_comment:<nil> oi_order_id:4 oi_begin_date:2018-03-15 oi_end_date:2018-03-16 oi_amount:119400]]
+orders:== [map[comment: start_date:2018-03-16 status:0 img_url:/static/images/home03.jpg end_date:2018-03-16 ctime:2018-03-11 18:15:53 days:3 amount:59400 order_id:6 title:地铁2号线，，老上海花园洋房] map[days:3 amount:89400 comment: title:宽窄巷子+160平大空间+文化保护区双地铁 img_url:/static/images/home02.jpg end_date:2018-03-16 ctime:2018-03-11 18:04:00 order_id:5 start_date:2018-03-15 status:0] map[days:3 comment: order_id:4 title:12号线龙漕路零距离 img_url:/static/images/home01.jpg start_date:2018-03-15 end_date:2018-03-16 ctime:2018-03-11 17:43:16 amount:119400 status:0]]
+2018/03/11 21:03:10.384 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:10] "GET /api/order/my?role=custom HTTP/1.0 200 0" 0.001417 http://115.159.62.43/template/orders.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 21:03:15.253 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:15] "GET /template/index.html HTTP/1.0 304 0" 0.000044 http://115.159.62.43/template/detail.html?id=7 Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username exist 
+2018/03/11 21:03:15.426 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:15] "GET /api/check_login HTTP/1.0 200 0" 0.000097 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+查询到数据
+查询到数据
+2018/03/11 21:03:15.435 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:15] "GET /api/house/index HTTP/1.0 200 0" 0.000738 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 21:03:17.121 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:17] "GET /template/index.html HTTP/1.0 304 0" 0.000059 http://115.159.62.43/template/detail.html?id=7 Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username exist 
+2018/03/11 21:03:17.291 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:17] "GET /api/check_login HTTP/1.0 200 0" 0.000095 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+查询到数据
+查询到数据
+2018/03/11 21:03:17.295 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:17] "GET /api/house/index HTTP/1.0 200 0" 0.000883 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username has existed 
+2018/03/11 21:03:22.724 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:22] "GET /api/profile HTTP/1.0 200 0" 0.000683 http://115.159.62.43/template/my.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+role: custom
+username has existed 
+[map[up_user_id:10039]]
+ role as custom
+==== 10039
+err2=,num2= <nil> 3
+maps_info: [map[oi_begin_date:2018-03-16 oi_days:3 oi_amount:59400 oi_status:0 oi_order_id:6 hi_index_image_url:/static/images/home03.jpg oi_end_date:2018-03-16 oi_ctime:2018-03-11 18:15:53 oi_comment:<nil> hi_title:地铁2号线，，老上海花园洋房] map[oi_ctime:2018-03-11 18:04:00 oi_days:3 oi_comment:<nil> hi_index_image_url:/static/images/home02.jpg oi_end_date:2018-03-16 oi_begin_date:2018-03-15 oi_amount:89400 oi_status:0 oi_order_id:5 hi_title:宽窄巷子+160平大空间+文化保护区双地铁] map[oi_amount:119400 oi_status:0 oi_order_id:4 hi_title:12号线龙漕路零距离 oi_days:3 oi_ctime:2018-03-11 17:43:16 oi_comment:<nil> hi_index_image_url:/static/images/home01.jpg oi_begin_date:2018-03-15 oi_end_date:2018-03-16]]
+orders:== [map[status:0 title:地铁2号线，，老上海花园洋房 img_url:/static/images/home03.jpg start_date:2018-03-16 end_date:2018-03-16 ctime:2018-03-11 18:15:53 days:3 order_id:6 amount:59400 comment:] map[end_date:2018-03-16 days:3 status:0 order_id:5 title:宽窄巷子+160平大空间+文化保护区双地铁 ctime:2018-03-11 18:04:00 amount:89400 comment: img_url:/static/images/home02.jpg start_date:2018-03-15] map[end_date:2018-03-16 ctime:2018-03-11 17:43:16 days:3 amount:119400 title:12号线龙漕路零距离 start_date:2018-03-15 status:0 comment: order_id:4 img_url:/static/images/home01.jpg]]
+2018/03/11 21:03:24.688 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:03:24] "GET /api/order/my?role=custom HTTP/1.0 200 0" 0.001702 http://115.159.62.43/template/orders.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 21:05:09.735 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:09] "GET /template/index.html HTTP/1.0 304 0" 0.000098 http://115.159.62.43/template/detail.html?id=7 Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username exist 
+2018/03/11 21:05:09.907 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:09] "GET /api/check_login HTTP/1.0 200 0" 0.000147 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+查询到数据
+查询到数据
+2018/03/11 21:05:09.918 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:09] "GET /api/house/index HTTP/1.0 200 0" 0.000851 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 21:05:11.765 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:11] "GET /template/index.html HTTP/1.0 304 0" 0.000062 http://115.159.62.43/template/detail.html?id=7 Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username exist 
+2018/03/11 21:05:11.932 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:11] "GET /api/check_login HTTP/1.0 200 0" 0.000084 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+查询到数据
+查询到数据
+2018/03/11 21:05:11.933 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:11] "GET /api/house/index HTTP/1.0 200 0" 0.001091 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 21:05:12.638 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:12] "GET /template/index.html HTTP/1.0 304 0" 0.000057 http://115.159.62.43/template/detail.html?id=7 Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username exist 
+2018/03/11 21:05:12.787 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:12] "GET /api/check_login HTTP/1.0 200 0" 0.000087 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+查询到数据
+查询到数据
+2018/03/11 21:05:12.788 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:12] "GET /api/house/index HTTP/1.0 200 0" 0.000815 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username has existed 
+2018/03/11 21:05:14.118 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:14] "GET /api/profile HTTP/1.0 200 0" 0.000568 http://115.159.62.43/template/my.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+2018/03/11 21:05:20.027 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:20] "GET /template/index.html HTTP/1.0 200 0" 0.000133 http://115.159.62.43/template/detail.html?id=7 Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username exist 
+2018/03/11 21:05:23.122 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:23] "GET /api/check_login HTTP/1.0 200 0" 0.000096 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+查询到数据
+查询到数据
+2018/03/11 21:05:23.123 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:23] "GET /api/house/index HTTP/1.0 200 0" 0.000670 http://115.159.62.43/template/index.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+username has existed 
+2018/03/11 21:05:26.028 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:26] "GET /api/profile HTTP/1.0 200 0" 0.000636 http://115.159.62.43/template/my.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
+role: custom
+username has existed 
+[map[up_user_id:10039]]
+ role as custom
+==== 10039
+err2=,num2= <nil> 3
+maps_info: [map[hi_title:地铁2号线，，老上海花园洋房 oi_begin_date:2018-03-16 oi_end_date:2018-03-16 oi_ctime:2018-03-11 18:15:53 oi_amount:59400 oi_order_id:6 hi_index_image_url:/static/images/home03.jpg oi_days:3 oi_status:0 oi_comment:<nil>] map[oi_days:3 oi_status:0 oi_order_id:5 hi_index_image_url:/static/images/home02.jpg oi_end_date:2018-03-16 oi_amount:89400 oi_comment:<nil> hi_title:宽窄巷子+160平大空间+文化保护区双地铁 oi_begin_date:2018-03-15 oi_ctime:2018-03-11 18:04:00] map[oi_order_id:4 oi_end_date:2018-03-16 oi_days:3 oi_status:0 oi_comment:<nil> hi_title:12号线龙漕路零距离 hi_index_image_url:/static/images/home01.jpg oi_begin_date:2018-03-15 oi_ctime:2018-03-11 17:43:16 oi_amount:119400]]
+orders:== [map[status:0 order_id:6 img_url:/static/images/home03.jpg start_date:2018-03-16 end_date:2018-03-16 ctime:2018-03-11 18:15:53 days:3 title:地铁2号线，，老上海花园洋房 amount:59400 comment:] map[end_date:2018-03-16 comment: title:宽窄巷子+160平大空间+文化保护区双地铁 img_url:/static/images/home02.jpg ctime:2018-03-11 18:04:00 days:3 amount:89400 status:0 order_id:5 start_date:2018-03-15] map[amount:119400 comment: title:12号线龙漕路零距离 img_url:/static/images/home01.jpg start_date:2018-03-15 ctime:2018-03-11 17:43:16 days:3 order_id:4 end_date:2018-03-16 status:0]]
+2018/03/11 21:05:27.136 [1;44m[D] [server.go:2619] 211.161.244.99 - - [11/Mar/2018 09:05:27] "GET /api/order/my?role=custom HTTP/1.0 200 0" 0.001371 http://115.159.62.43/template/orders.html Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+[0m
