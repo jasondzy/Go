@@ -33,6 +33,12 @@ func init() {
     beego.Router("/api/profile/name/", &controllers.PersonnameModify{})
     //订单显示
     beego.Router("/api/order/my", &controllers.ShowOrder{})
+    //订单处理
+    beego.Router("/api/order/", &controllers.OrderHandle{})
+    //处理搜索信息中的地区显示
+    beego.Router("/api/house/area/", &controllers.SerachareaShow{})
+    //处理搜索信息要显示的信息
+    beego.Router("/api/house/list2", &controllers.SearchinfoShow{})
 
 }
 

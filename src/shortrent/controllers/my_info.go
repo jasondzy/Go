@@ -207,7 +207,6 @@ func (c *ShowOrder) Get() {
 		var maps []orm.Params
 		var maps_info []orm.Params
 		var orders = make([]map[string]interface{}, 0)
-		var order = make(map[string]interface{})
 
 		num, err := o.Raw("select up_user_id from ih_user_profile where up_name=?", session_data).Values(&maps)
 		if err == nil && num > 0 {
@@ -215,11 +214,13 @@ func (c *ShowOrder) Get() {
 			if role == "custom"{
 				fmt.Println(" role as custom")
 				fmt.Println("====", maps[0]["up_user_id"].(string))
-				num2, err2 := o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where hi_user_id=? order by oi_ctime desc", maps[0]["up_user_id"].(string)).Values(&maps_info)
+				num2, err2 := o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where oi_user_id=? order by oi_ctime desc", 10035).Values(&maps_info)
+				fmt.Println("err2=,num2=",err2,num2)
 				if err2 == nil && num2 > 0 {
 					fmt.Println("maps_info:",maps_info)
 
 					for _, value := range maps_info {
+						order := make(map[string]interface{}) //在每次循环的时候重新定义这样可防止多次循环后都指向同一个值
 						order["order_id"] = value["oi_order_id"].(string)
 						order["title"] = value["hi_title"].(string)
 						order["img_url"] = value["hi_index_image_url"].(string)
@@ -229,30 +230,42 @@ func (c *ShowOrder) Get() {
 						order["days"] = value["oi_days"].(string)
 						order["amount"] = value["oi_amount"].(string)
 						order["status"] = value["oi_status"].(string)
-						order["comment"] = value["oi_comment"].(string)
 
-						orders = append(orders, order)
+						if value["oi_comment"] != nil {
+							order["comment"] = value["oi_comment"].(string)
+						} else {
+							order["comment"] = ""
+						}
+
+						orders = append(orders, order) //切记，这里append的对象order传入的是一个地址，即如果maps_info中有多个切片值，那么order保留的是最后一个切片中的值，但是通过在循环里边声明order变量就不一样了，这样就在每次循环都重新定义一个order这样可防止之前的问题
 					}
 					fmt.Println("orders:==",orders)
 					
 
 				} else {
 					fmt.Println(" do not query the data ")
-					_, _ = o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where hi_user_id=? order by oi_ctime desc", 10000).Values(&maps_info)
-					for _, value := range maps_info {
+					_, _ = o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where oi_user_id=? order by oi_ctime desc", 10000).Values(&maps_info)
+
+						order := make(map[string]interface{})
 						order["order_id"] = "此为示例订单，在你下单后显示自己订单"
-						order["title"] = value["hi_title"].(string)
-						order["img_url"] = value["hi_index_image_url"].(string)
-						order["start_date"] = value["oi_begin_date"].(string)
-						order["end_date"] = value["oi_end_date"].(string)
-						order["ctime"] = value["oi_ctime"].(string)
-						order["days"] = value["oi_days"].(string)
-						order["amount"] = value["oi_amount"].(string)
-						order["status"] = value["oi_status"].(string)
-						order["comment"] = value["oi_comment"].(string)
+						order["title"] = maps_info[0]["hi_title"].(string)
+						order["img_url"] = maps_info[0]["hi_index_image_url"].(string)
+						order["start_date"] = maps_info[0]["oi_begin_date"].(string)
+						order["end_date"] = maps_info[0]["oi_end_date"].(string)
+						order["ctime"] = maps_info[0]["oi_ctime"].(string)
+						order["days"] = maps_info[0]["oi_days"].(string)
+						order["amount"] = maps_info[0]["oi_amount"].(string)
+						order["status"] = maps_info[0]["oi_status"].(string)
+
+						if maps_info[0]["oi_comment"] != nil {
+							order["comment"] = maps_info[0]["oi_comment"].(string)
+						} else {
+							order["comment"] = ""
+						}
+						
 
 						orders = append(orders, order)
-					}
+
 					fmt.Println("orders==", orders)
 					
 				}
@@ -265,6 +278,7 @@ func (c *ShowOrder) Get() {
 				if err2 == nil && num2 > 0 {
 					fmt.Println("maps_info:",maps_info)
 					for _, value := range maps_info {
+						order := make(map[string]interface{})
 						order["order_id"] = value["oi_order_id"].(string)
 						order["title"] = value["hi_title"].(string)
 						order["img_url"] = value["hi_index_image_url"].(string)
@@ -274,29 +288,40 @@ func (c *ShowOrder) Get() {
 						order["days"] = value["oi_days"].(string)
 						order["amount"] = value["oi_amount"].(string)
 						order["status"] = value["oi_status"].(string)
-						order["comment"] = value["oi_comment"].(string)
 
-						orders = append(orders, order)
+						if value["oi_comment"] != nil {
+							order["comment"] = value["oi_comment"].(string)
+						} else {
+							order["comment"] = ""
+						}
+
+						orders = append(orders, order) 
 					}
 
 
 				} else {
 					fmt.Println(" do not query the data ")
-					_, _ = o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where hi_user_id=? order by oi_ctime desc", 10000).Values(&maps_info)
-					for _, value := range maps_info {
+					_, _ = o.Raw("select oi_order_id,hi_title,hi_index_image_url,oi_begin_date,oi_end_date,oi_ctime,oi_days,oi_amount,oi_status,oi_comment from ih_order_info inner join ih_house_info on oi_house_id=hi_house_id where oi_user_id=? order by oi_ctime desc", 10000).Values(&maps_info)
+
+						order := make(map[string]interface{})
 						order["order_id"] = "此为示例订单，在你下单后显示自己订单"
-						order["title"] = value["hi_title"].(string)
-						order["img_url"] = value["hi_index_image_url"].(string)
-						order["start_date"] = value["oi_begin_date"].(string)
-						order["end_date"] = value["oi_end_date"].(string)
-						order["ctime"] = value["oi_ctime"].(string)
-						order["days"] = value["oi_days"].(string)
-						order["amount"] = value["oi_amount"].(string)
-						order["status"] = value["oi_status"].(string)
-						order["comment"] = value["oi_comment"].(string)
+						order["title"] = maps_info[0]["hi_title"].(string)
+						order["img_url"] = maps_info[0]["hi_index_image_url"].(string)
+						order["start_date"] = maps_info[0]["oi_begin_date"].(string)
+						order["end_date"] = maps_info[0]["oi_end_date"].(string)
+						order["ctime"] = maps_info[0]["oi_ctime"].(string)
+						order["days"] = maps_info[0]["oi_days"].(string)
+						order["amount"] = maps_info[0]["oi_amount"].(string)
+						order["status"] = maps_info[0]["oi_status"].(string)
+
+						if maps_info[0]["oi_comment"] != nil {
+							order["comment"] = maps_info[0]["oi_comment"].(string)
+						} else {
+							order["comment"] = ""
+						}
 
 						orders = append(orders, order)
-					}
+
 				}
 			}
 

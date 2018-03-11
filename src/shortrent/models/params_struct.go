@@ -25,3 +25,9 @@ type Real_name struct {
 type Name_modify struct {
 	Name string `json:"name"`
 }
+
+type Order_data struct {
+	House_id string `json:"house_id"`
+	Start_data string `json:"start_date"`
+	End_date string `json:"end_date"`
+}

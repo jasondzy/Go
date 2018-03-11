@@ -41,7 +41,7 @@ function updateHouseData(action="append") {
         house_data_querying = false;
         if ("0" == data.errcode) {
             if (0 == data.total_page) {
-                $(".house-list").html("暂时没有符合您查询的房屋信息。");
+                $(".house-list").html("暂时没有符合您查询的房屋信息。目前只有浦东新区、徐汇区、黄浦区存在房屋信息");
             } else {
                 total_page = data.total_page;
                 if ("append" == action) {
