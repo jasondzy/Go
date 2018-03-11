@@ -162,7 +162,7 @@ func (c *ShowDetail) Get() {
 			if err3 == nil && num3 > 0 {
 				
 				for _,value3 := range maps_houseinfo {
-					fmt.Println("=======")
+
 					integer,_ = strconv.Atoi(value3["hf_facility_id"].(string))
 					facilities = append(facilities, integer)
 				}
@@ -283,3 +283,4 @@ func (c *OrderHandle) Post() {
 }
 
 //*********************************************end**********************************************************
+

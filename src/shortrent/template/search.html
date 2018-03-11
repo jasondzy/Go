@@ -59,7 +59,7 @@
         <script id="house-list-tmpl" type="text/html">
             {{each houses as house}}
             <li class="house-item">
-                <a href="/detail.html?id={{house.house_id}}"><img src="{{house.image_url}}"></a>
+                <a href="/template/detail.html?id={{house.house_id}}"><img src="{{house.image_url}}"></a>
                 <div class="house-desc">
                     <div class="landlord-pic"><img src="{{house.avatar}}"></div>
                     <div class="house-price">￥<span>{{(house.price/100.0).toFixed(0)}}</span>/晚</div>

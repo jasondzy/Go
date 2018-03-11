@@ -104,7 +104,8 @@ func (c *PersonimgUpload) Post() {
 			}
 			defer f.Close()
 			file_path := "/static/images/personal_images/" + maps[0]["up_mobile"].(string)
-			c.SaveToFile("avatar", file_path) // 保存位置在 static/images/personal_images, 没有文件夹要先创建
+			fmt.Println("file+_path", file_path)
+			c.SaveToFile("avatar", "/home/ubuntu/user_jason/go/src/shortrent" + file_path) // 保存位置在 static/images/personal_images, 没有文件夹要先创建
 
 			//如下将上传的图片路径保存到数据库中去
 			res, err := o.Raw("update ih_user_profile set up_avatar=? where up_name=?", file_path, session_data).Exec()
