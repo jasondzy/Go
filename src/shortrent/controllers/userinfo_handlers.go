@@ -5,6 +5,9 @@ import (
 	"shortrent/models"
 	"encoding/json"
 	"fmt"
+	"io"
+	"crypto/sha1"
+	"encoding/base32"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -79,13 +82,23 @@ func (c *UserinfoHandler) Post() {
 	}
 	// 设置 session end
 
+	//这里对密码进行加密处理
+	h := sha1.New()
+	io.WriteString(h, userinfo.Password)
+	password_sh1 := base32.StdEncoding.EncodeToString(h.Sum(nil)) //进行base32编码操作
+	// fmt.Println("passwrod===", password_sh1)
+
+	// data,_ := base32.StdEncoding.DecodeString(password_sh1) //这里进行的是解码操作
+	// fmt.Println("string passwortd====", data)
+
+	//加密 end
 
 	// 判断手机号是否注册 end
 
 	userinfo_data := new(models.Ih_user_profile)
 	userinfo_data.Up_name = userinfo.Mobile
 	userinfo_data.Up_mobile = userinfo.Mobile
-	userinfo_data.Up_passwd = userinfo.Password
+	userinfo_data.Up_passwd = password_sh1
 
 	fmt.Println(o.Insert(userinfo_data))
 

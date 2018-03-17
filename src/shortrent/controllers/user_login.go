@@ -5,6 +5,9 @@ import (
 	"shortrent/models"
 	"encoding/json"
 	"fmt"
+	"io"
+	"crypto/sha1"
+	"encoding/base32"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -25,14 +28,18 @@ func (c *LoginHandler) Post() {
 	var maps []orm.Params
 	num, err := o.Raw("SELECT * FROM ih_user_profile WHERE up_mobile = ?", login_data.Mobile).Values(&maps)
 	if err == nil && num > 0 {
-		fmt.Println(maps) // slene
-		fmt.Println(maps[0]["up_passwd"])
-		if login_data.Password != maps[0]["up_passwd"] {
-			fmt.Println("password is wrong")
+		//密码加密验证
+		h := sha1.New()
+		io.WriteString(h, login_data.Password)
+		password_sh1 := base32.StdEncoding.EncodeToString(h.Sum(nil)) //进行base32编码操作
+		
+		if password_sh1 != maps[0]["up_passwd"] {
+			// fmt.Println("password is wrong")
 			c.Data["json"] = map[string]interface{}{"errcode": "1", "errmsg": "password is wrong "}
 			
 		} else {
-		c.Data["json"] = map[string]interface{}{"errcode": "0", "errmsg": "ok"}
+			// fmt.Println(" verity correct ", password_sh1)
+			c.Data["json"] = map[string]interface{}{"errcode": "0", "errmsg": "ok"}
 		}		
 	} else {
 		fmt.Println("查询不到")

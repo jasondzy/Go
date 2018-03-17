@@ -1,31 +1,17 @@
-package main 
-import(
+package main
+
+import (
+	"bufio"
+	"os"
 	"fmt"
-	"net/http"
 )
 
-func main(){
-
-	mux := http.NewServeMux()
-
-	mux.HandleFunc("/", index)
-	mux.HandleFunc("/test/", test)
-
-	server := &http.Server{
-		Addr: "0.0.0.0:8080",
-		Handler: mux,
+func main() {
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		fmt.Println(scanner.Text()) // Println will add back the final '\n'
 	}
-
-	server.ListenAndServe()
-}
-
-func index(w http.ResponseWriter, request *http.Request){
-	fmt.Fprintf(w,"hello world")
-}
-
-func test(w http.ResponseWriter, request *http.Request){
-	w.Header().Set("Location","https://www.baidu.com")
-	w.WriteHeader(302) 
-	// h := request.Header
-	// fmt.Fprintln(w, h)
+	if err := scanner.Err(); err != nil {
+		fmt.Fprintln(os.Stderr, "reading standard input:", err)
+	}
 }
