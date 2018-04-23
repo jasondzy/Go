@@ -1,0 +1,37 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3"; //这里必须要写上，这些表明这个protobuf的版本
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld"; //这里三个 标志定义的是java的标志
+option java_outer_classname = "HelloWorldProto";
+
+package helloworld; //这里的package使用在go语言中的时候定义的一个package
+
+// The greeting service definition.
+service Greeter { //这个service是protobuf的服务的关键字，这里定义了一个服务sayhello，这样grpc就会提供一个服务功能
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest { //这里的request表示对额是客户端在请求的时候的参数情况
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1; //这里的reply表示的是服务器的返回值情况
+}
