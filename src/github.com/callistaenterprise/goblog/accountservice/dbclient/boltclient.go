@@ -91,3 +91,4 @@ func (bc *BoltClient) QueryAccount(accountId string) (model.Account, error) {
 	}
 	return account, nil  //这里返回解析出的数据
 }
+
