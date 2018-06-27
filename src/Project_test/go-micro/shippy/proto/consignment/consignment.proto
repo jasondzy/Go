@@ -1,0 +1,34 @@
+syntax = "proto3";
+package go.micro.srv.consignment;
+
+service ShippingService {
+    //如下定义一个创建一个仓库的函数
+    rpc CreateConsignment (Consignment) returns (Response) {}
+
+    //如下定义一个获取已有仓库的函数
+    rpc GetConsignment(Getmessage) returns (Response) {}
+}
+//如下定义的是上边定义的service所用到的参数，这里的结构中都被赋予了初始值
+message Consignment {
+    string id = 1;
+    string description = 2;
+    int32 weight = 3;
+    repeated Container containers = 4;
+    string vessel_id = 5;
+}
+
+message Container {
+    string id = 1;
+    string customer_id = 2;
+    string origin = 3;
+    string user_id = 4;
+}
+
+message Response {
+    bool created = 1;
+    repeated Consignment consignment = 2;
+}
+
+message Getmessage {
+
+}

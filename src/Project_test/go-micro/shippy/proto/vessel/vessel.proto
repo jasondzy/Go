@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package go.micro.srv.vessel;
+
+service VesselService {
+    rpc FindAvailable (Specification) returns (Response) {
+
+    }
+}
+
+message Vessel {
+    string id = 1;
+    int32 capicity = 2;
+    int32 max_weight = 3;
+    string name = 4;
+    bool availanle = 5;
+    string ower_id = 6;
+}
+
+message Specification {
+    int32 capicity = 1;
+    int32 max_weight = 2;
+}
+
+message Response {
+    Vessel vessel = 1;
+    repeated Vessel vessels = 2;
+}

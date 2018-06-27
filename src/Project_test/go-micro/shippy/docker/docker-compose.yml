@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  consignment-cli:
+    build: ./consignment-cli
+
+
+  consignment-service:
+    build: ./consignment-server
+    entrypoint:
+      - ./consignment-service
+      - --registry_address=192.168.31.119:8500
+      - --registry=consul
+
+    links:
+      - consul
+
+  vessel-service:
+    build: ./vessel-service
+    entrypoint:
+      - ./vessel-service
+      - --registry_address=192.168.31.119:8500
+      - --registry=consul
+    links:
+      - consul
+
+  consul:
+    image: consul
+    ports:
+      - "192.168.31.119:8500:8500"
